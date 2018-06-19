@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 #getting the dataset
 dataset = pd.read_csv("Position_Salaries.csv")
-X = dataset.iloc[:,1:2]
-y = dataset.iloc[:,2]
+X = dataset.iloc[:,1:2].values
+y = dataset.iloc[:,2].values
 
 #fitting linear regression in the model
 from sklearn.linear_model import LinearRegression
@@ -37,3 +37,9 @@ plt.title('Truth or Bluff(Lineqr Regression)')
 plt.xlabel('Position Level')
 plt.ylabel('Salary')
 plt.show()
+
+#Predicting a new result using Linear Regression 
+lin_reg_1.predict(6.5)
+
+#Predicting a new result using Polynomial Regression
+lin_reg_2.predict(poly_reg.fit_transform(6.5))
